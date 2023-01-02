@@ -1,16 +1,50 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>MessageMe</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+<head>
+  <title>MessageMe</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".ui.dropdown").dropdown();
+    });
+  </script>
+</head>
+
+<body>
+  <div class="ui inverted small menu">
+    <div class="ui container">
+      <a class=" item">
+        Home
+      </a>
+      <a class="item">
+        Messages
+      </a>
+      <div class="right menu">
+        <div class="ui dropdown item">
+          Language <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">English</a>
+            <a class="item">Russian</a>
+            <a class="item">Spanish</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ui primary button">Sign Up</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui  container">
     <%= yield %>
-  </body>
+  </div>
+</body>
+
 </html>
