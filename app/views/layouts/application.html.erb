@@ -2,6 +2,7 @@
 
 <head>
   <title>MessageMe</title>
+  <%= favicon_link_tag %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -19,29 +20,7 @@
 </head>
 
 <body>
-  <div class="ui inverted small menu">
-    <div class="ui container">
-      <a class=" item">
-        Home
-      </a>
-      <a class="item">
-        Messages
-      </a>
-      <div class="right menu">
-        <div class="ui dropdown item">
-          Language <i class="dropdown icon"></i>
-          <div class="menu">
-            <a class="item">English</a>
-            <a class="item">Russian</a>
-            <a class="item">Spanish</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="ui primary button">Sign Up</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render 'layouts/navigation'%>
   <div class="ui  container">
     <%= yield %>
   </div>
