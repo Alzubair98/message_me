@@ -6,14 +6,15 @@
       </div>
     </div>
     <div class="extra content">
-      <form class='ui replay form'>
-        <div class='field'>
-          <div class='ui fluid icon input'>
-            <input type='text' placeholder='Enter a message...'>
-            <i class='bordered inverted red icon edit'></i>
-          </div>
+      <%= form_for(@message, html: {class: "ui replay form", role: 'form'}, url: message_path) do |f| %>
+      <div class='field'>
+        <div class='ui fluid icon input'>
+          <%= f.text_field :body, placeholder: "Enter a Message"%>
+
+          <%= f.button '<i class="bordered inverted red icon edit"></i>'.html_safe %>
         </div>
-      </form>
+      </div>
+      <%end%>
     </div>
   </div>
 </div>
