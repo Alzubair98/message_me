@@ -1,5 +1,6 @@
 const btn = document.getElementById("message_body");
 const sendBTN = document.getElementById("send");
+const form = document.getElementById("msg-form");
 
 const submit_message = () => {
   btn.addEventListener("keydown", (e) => {
