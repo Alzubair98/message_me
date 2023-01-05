@@ -4,3 +4,4 @@ import "controllers";
 
 import "channels";
 import "custom/main";
+import "custom/submit";
