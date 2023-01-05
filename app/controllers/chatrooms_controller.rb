@@ -3,7 +3,8 @@ class ChatroomsController < ApplicationController
 
     def index 
         @message = Message.new
-        @messages = Message.all
+        # @messages = Message.all loading all messages might be error prone 
+        @messages = Message.custom_display
     end
 
     def new 
