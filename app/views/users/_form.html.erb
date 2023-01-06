@@ -1,0 +1,32 @@
+<div class='color'>
+  <div class='background'>
+    <div class='shape'></div>
+    <div class='shape'></div>
+  </div>
+
+  <div class="signform">
+    <%= form_with(model: @user, local:true) do |f| %>
+    <h3>Sign up</h3>
+    <div class="field">
+      <%= f.label :username, class: 'label' %><br />
+      <%= f.text_field :username, class:"signinput", placeholder: 'Enter Your Name'%>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, class:'label' %><br />
+      <%= f.email_field :email, class:"signinput", placeholder: 'Enter Your Email'%>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, class:'label' %><br />
+      <%= f.password_field :password , class:"signinput", placeholder: 'Enter Your Password' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit(@user.new_record? ? "Sign up" : "update account", class: "button") %>
+    </div>
+    <%end%>
+  </div>
+
+
+</div>

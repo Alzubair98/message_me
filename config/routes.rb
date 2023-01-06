@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
   root 'chatrooms#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
