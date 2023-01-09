@@ -1,7 +1,17 @@
 <div class="event">
   <div class="content">
-    <div class="summary">
-      <em><%= message.user.username%></em> : <%= message.body%>
+    <div class="summary cont-div">
+      <div class='message-div'>
+        <em><%= message.user.username%></em> : <%= message.body%>
+      </div>
+      <div class='delete-div'>
+        <%if current_user == message.user%>
+        <%= link_to '<i class="trash alternate outline red icon"></i>'.html_safe, 
+      message_path(message), 
+      data: { turbo_method: "delete" }%>
+        <%end%>
+      </div>
     </div>
+
   </div>
 </div>

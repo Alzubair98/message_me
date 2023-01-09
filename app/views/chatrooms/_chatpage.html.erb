@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="extra content">
-      <%= form_for(@message, html: {class: "ui replay form", role: 'form', id:'msg-form'}, url: message_path, remote: true) do |f| %>
+      <%= form_for(@message, html: {class: "ui replay form", role: 'form', id:'msg-form'}, url: '/message', remote: true) do |f| %>
       <div class='field'>
         <div class='ui fluid icon input'>
           <%= f.text_field :body, placeholder: "Enter a Message"%>
