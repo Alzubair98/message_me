@@ -1,6 +1,6 @@
 <%= form_with(model: @room, remote:true) do |f| %>
 <div class="ui action input">
   <%= f.text_field :name,  placeholder: 'Enter Room Name', autocomplete: 'off'%>
-  <%= f.submit data: {disable_with: false}, class: "ui secondary button"  %>
+  <%= f.submit "🗸", data: {disable_with: false} %>
 </div>
 <%end%>

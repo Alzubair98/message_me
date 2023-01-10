@@ -5,14 +5,20 @@
         <a class="active item">
           <%= current_user.username.capitalize %>
         </a>
+        <%= turbo_stream_from "users" %>
+        <div id="users">
+          <span class="item">Users
+            <%= render @users%>
+          </span>
+        </div>
+        <%= turbo_stream_from "rooms" %>
+        <div id="rooms">
+          <span class="item">Rooms
+            <%= render @rooms%>
+          </span>
 
-        <span class="item">Users
-          <%= render @users%>
-        </span>
-
-        <span class="item">Rooms
-          <%= render @rooms%>
-        </span>
+        </div>
+        <%= render 'rooms/create_new_room'%>
       </div>
     </div>
   </div>

@@ -2,12 +2,8 @@ class RoomsController < ApplicationController
     before_action :require_user
 
     def index
-        @room = Room.new
         @rooms = Room.public_rooms
         @users = User.all_except(current_user)
-    end
-
-    def show 
     end
 
     def new 
@@ -18,7 +14,7 @@ class RoomsController < ApplicationController
         @room.save
         if !@room.save 
             flash[:error] = "Something is wrong"
-            redirect_to rooms_path
+            redirect_to root_path
         end
     end
 
