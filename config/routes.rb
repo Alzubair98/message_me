@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :messages, except: [:create, :new]
   post 'message', to: 'messages#create'
 
+  resources :rooms
+
   mount ActionCable.server, at: '/cable'
 
 end
