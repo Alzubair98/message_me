@@ -10,4 +10,7 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX }
     validates :password_digest, presence: true
     has_secure_password
+
+    # to not show our name as logged in users 
+    scope :all_except, ->(user){ where.not(id: user)}
 end
