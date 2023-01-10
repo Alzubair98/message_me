@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  # devise_scope :user do 
+  #   get 'users', to: 'devise/sessions#new'
+  # end
+
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
   root 'chatrooms#index'
