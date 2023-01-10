@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
     # to not show our name as logged in users 
     scope :all_except, ->(user){ where.not(id: user)}
+    # to add the users to the list after the user is created without the need of refresh the page
+    after_create_commit { broadcast_append_to "users" }
 end
