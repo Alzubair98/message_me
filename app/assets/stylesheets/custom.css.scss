@@ -9,6 +9,12 @@
     height: 5rem;
 }
 
+#room{
+    height: 25rem;
+    overflow-y: auto;
+    width: 17rem;
+}
+
 body{
     background-color: lightgray !important;
 }
@@ -119,5 +125,5 @@ body{
 
 .text{
     color: white;
-    margin-top: 5px;
+    margin-left: 10px;
 }
