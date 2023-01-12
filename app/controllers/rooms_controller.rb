@@ -2,6 +2,8 @@ class RoomsController < ApplicationController
     before_action :require_user
 
     def index
+        @room = Room.new 
+        @message = Message.new
         @rooms = Room.public_rooms
         @users = User.all_except(current_user)
         render 'index'
@@ -14,9 +16,8 @@ class RoomsController < ApplicationController
         @users = User.all_except(current_user)
         @message = Message.new
         @messages = @room.messages.order(created_at: :asc)
-
         render 'index'
-
+        
     end
 
     def new 
