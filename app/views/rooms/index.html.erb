@@ -1,24 +1,8 @@
-<div class='four wide column'>
-  <div class='ui fluid raised card chatbox'>
-    <div class='content'>
-      <div class="ui inverted vertical menu">
-        <a class="active item">
-          <%= current_user.username.capitalize %>
-        </a>
-        <%= turbo_stream_from "users" %>
-        <div id="users">
-          <span class="item">Users
-            <%= render @users%>
-          </span>
-        </div>
-        <%= turbo_stream_from "rooms" %>
-        <div id="rooms">
-          <span class="item">Rooms
-            <%= render @rooms%>
-          </span>
-        </div>
-        <%= render 'create_new_room'%>
-      </div>
-    </div>
-  </div>
+<div class='ui two column grid'>
+
+  <%= render 'left_side'%>
+
+  <%= render 'right_side'%>
+
+
 </div>

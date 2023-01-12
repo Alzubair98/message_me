@@ -1,0 +1,22 @@
+<div class='four wide column'>
+  <div class='ui fluid raised card chatbox'>
+    <div class='content'>
+      <div class="ui inverted vertical menu" id="room">
+        <h5 class="item">
+          <%= current_user.username.capitalize %>
+        </h5>
+        <%= turbo_stream_from "users" %>
+        <div id="users">
+          <h5 class="text">Users</h5>
+          <%= render @users%>
+        </div>
+        <%= turbo_stream_from "rooms" %>
+        <div id="rooms">
+          <h5 class="text">Rooms</h5>
+          <%= render @rooms%>
+        </div>
+      </div>
+      <%= render 'rooms/create_new_room'%>
+    </div>
+  </div>
+</div>
