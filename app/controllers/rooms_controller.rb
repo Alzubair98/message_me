@@ -4,8 +4,19 @@ class RoomsController < ApplicationController
     def index
         @rooms = Room.public_rooms
         @users = User.all_except(current_user)
+        render 'index'
+    end
 
-        @single_room = Room.find(params[:id])
+    def show 
+        @room = Room.find(params[:id])
+
+        @rooms = Room.public_rooms
+        @users = User.all_except(current_user)
+        @message = Message.new
+        @messages = @room.messages.order(created_at: :asc)
+
+        render 'index'
+
     end
 
     def new 

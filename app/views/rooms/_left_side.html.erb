@@ -5,16 +5,15 @@
   <div class='ui fluid raised card chatbox'>
     <div class='content' id='messages'>
       <div class="ui feed" id='message-container'>
-        <%# <%= render @messages%>
+
       </div>
     </div>
     <div class="extra content">
-      <%# <%= form_for(@message, html: {class: "ui replay form", role: 'form', id:'msg-form'}, url: '/message', remote: true) do |f| 
+      <%= form_for(model: [@single_room, @message], html: {class: "ui replay form", role: 'form', id:'msg-form'},  remote: true) do |f| %>
       <div class='field'>
         <div class='ui fluid icon input'>
-          <%= f.text_field :body, placeholder: "Enter a Message"
-
-          <%= f.button '<i class="bordered inverted red icon edit"></i>'.html_safe , id: 'send' 
+          <%= f.text_field :body, placeholder: "Enter a Message" %>
+          <%= f.button '<i class="bordered inverted red icon edit"></i>'.html_safe , id: 'send' %>
         </div>
       </div>
       <%end%>
